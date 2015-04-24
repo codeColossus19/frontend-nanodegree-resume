@@ -213,3 +213,7 @@ span {
     display: block;
   }
 }
+
+#header span{
+  color: #F5A623;
+}
