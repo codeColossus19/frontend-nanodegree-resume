@@ -1,22 +1,32 @@
 var bio={
-    "Name": "CodeColossus19",
-    "Role": "Director of Clandestine Operations",
-    "Contacts": {
-        "Mobile": "123-4655",
-        "Morse Code": "Vun Zero",
-        "Cell": "8675-309",
-        "Email": "jibberish@aol.com"
+    "name": "CodeColossus19",
+    "role": "Director of Clandestine Operations",
+    "contacts": {
+        "mobile": "123-4655",
+        "email": "jibberish@aol.com",
+        "github": "https://github.com/",
+        "twitter": "exampletwitter@twitter.com",
+        "location": "Arizona"
     },
-    "PictureUrl": "C:/Git/frontend-nanodegree-resume/images/subzero.jpg",
-    "WelcomeMessage": "Welcome to my fantabulous site!",
-    "Skills": "Chess, Eating, Chipotle, Awesomeness"
+    "welcomeMessage": "Welcome to my fantabulous site!",
+    "skills": ["Chess","Eating","Chipotle","Awesomeness"],
+    "biopic": "C:/Git/frontend-nanodegree-resume/images/subzero.jpg"
 };
 
 var work= {
-    "jobposition": "Commander",
+"jobs":[{
     "employer": "Lin Quai Dojo",
-    "years": 4,
-    "City": "Phoenix"
+    "title": "Commander",
+    "location": "Phoenix",
+    "dates": "2014-2015",
+    "description": "In charge of day to day Mortal Kombat operations"
+},{
+    "employer": "Ajs",
+    "title": "bagboy",
+    "location": "Phoenix",
+    "dates": "2004-2005",
+    "description": "Bagged"
+}]
 };
 
 
@@ -24,15 +34,19 @@ var education = {
     "schools": [
         {
             "name": "Arizona State University",
-            "city": "Tempe, Arizona",
+            "location": "Tempe, Arizona",
             "degree": "BA",
-            "major": "Computer Information Systems"
+            "major": "Computer Information Systems",
+            "dates":2011,
+            "url":"asu.edu"
         },
         {
             "name": "Arcadia High School",
-            "city": "Phoenix, Arizona",
+            "location": "Phoenix, Arizona",
             "degree": "Diploma",
-            "major": "High School"
+            "major": "High School",
+            "dates":2007,
+            "url":"http://susd.arcadia.schoolfusion.us/"
         }
     ],
     "onlineCourses": [
@@ -50,13 +64,13 @@ var projects = {
         {
             "title": "Javascript Course",
             "CourseFormat": "Online",
-            "dates": 2015,
+            "dates": "2015",
             "description": "Javascript Basics"
         },
         {
             "title": "C# Course",
             "CourseFormat": "Self Study",
-            "dates": 2015,
+            "dates": "2014-2015",
             "description": "C# expert skills"
         }
     ]
@@ -108,11 +122,24 @@ $('#education').append(formattedUniversity);
 //mapDiv
 */
 
-if(bio.skills!="")
-{
-var formattedSkills=HTMLskills.replace("%data%", bio.Skills);
-$('#header').append(formattedSkills);
-$('#skills').append(formattedSkills);
+if( bio.skills.length> 0){
+$('#header').append(HTMLskillsStart);
+    for(var item in bio.skills){
+        var formattedSkill=HTMLskills.replace("%data%", bio.skills[item]);
+        $('#skills').append(formattedSkill);
+    }
 }
+
+if(work!="")
+{
+    for(var item in work.jobs)
+    {
+        $('#workExperience').append(HTMLworkStart);
+        var formattedEmployer=HTMLworkEmployer.replace("%data%",work.jobs[item].employer);
+        var formattedTitle=HTMLworkTitle.replace("%data%",work.jobs[item].title);
+        $('.work-entry:last').append(formattedEmployer +formattedTitle);
+    }
+}
+
 
 
