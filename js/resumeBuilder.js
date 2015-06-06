@@ -65,13 +65,13 @@ var projects = {
             "title": "Javascript Course",
             "CourseFormat": "Online",
             "dates": "2015",
-            "description": "Javascript Basics"
+            "description": "In this course, you'll explore the JavaScript programming language by creating an interactive version of your résumé. You’ll learn the JavaScript programming fundamentals you need while building new elements and sections to enhance your résumé. "
         },
         {
             "title": "C# Course",
             "CourseFormat": "Self Study",
             "dates": "2014-2015",
-            "description": "C# expert skills"
+            "description": "C# expert skills learned while taking practice tests, the 70-483 C# exam, and materials from PluralSight."
         }
     ]
 };
@@ -119,6 +119,26 @@ $('#header').append(HTMLskillsStart);
 if(work!="")
 {
 populateWork();
+}
+
+$('#main').append(internationalizeButton);
+//Functions
+function inName(name) {
+    var splitName=name.trim().split(" ");
+    var lastName=splitName[1].toUpperCase();
+    var firstName=splitName[0].slice(0,1).toUpperCase()+splitName[0].slice(1).toLowerCase();
+    return firstName.concat(" "+lastName);
+}
+
+$(document).click(function(loc){
+var x= loc.pageX;
+var y= loc.pageY;
+
+logClick(x,y);
+});
+
+function logClick(x,y){
+    console.log("x-loc:"+x+" y-loc:"+y)
 }
 
 function populateWork()
