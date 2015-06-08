@@ -80,14 +80,7 @@ var projects = {
 
 var formattedName=HTMLheaderName.replace('%data%',bio.name);
 var formattedRole=HTMLheaderRole.replace('%data%',bio.role);
-var formattedContacts;
 
-for(var key in bio.contacts)
-{
-	formattedContacts=HTMLcontactGeneric.replace("%contact%",key+":").replace("%data%",bio.contacts[key]);
-	
-	$('#topContacts').append(formattedContacts);
-}
 
 var formattedPic=HTMLbioPic.replace("%data%",bio.biopic);
 var formattedWelcomeMessage=HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage)
@@ -101,14 +94,21 @@ $('#header').append(formattedRole);
 $('#header').append(formattedPic);
 $('#header').append(formattedWelcomeMessage);
 
-
+var formattedContacts;
+$('#header').append('<ul id="topContacts" class="flex-box"></ul>');
+for(var key in bio.contacts)
+{
+    formattedContacts=HTMLcontactGeneric.replace("%contact%",key+":").replace("%data%",bio.contacts[key]);
+    
+    $('#topContacts').append(formattedContacts);
+}
 //projects
 
 //education
 $('#education').append(formattedUniversity);
 
 //mapDiv
-
+$("#mapDiv").append(googleMap);
 
 if( bio.skills.length> 0){
 $('#header').append(HTMLskillsStart);
