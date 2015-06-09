@@ -1,5 +1,5 @@
 var bio={
-    "name": "CodeColossus19",
+    "name": "Sub Zero",
     "role": "Director of Clandestine Operations",
     "contacts": {
         "mobile": "123-4655",
@@ -154,7 +154,8 @@ if(projects!="")
     projects.display();
 }
 
-function inName(name) {
+function inName() {
+    var name=$('#name').html();
     var splitName=name.trim().split(" ");
     var lastName=splitName[1].toUpperCase();
     var firstName=splitName[0].slice(0,1).toUpperCase()+splitName[0].slice(1).toLowerCase();
