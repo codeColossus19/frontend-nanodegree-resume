@@ -6,7 +6,7 @@ var bio={
         "email": "jibberish@aol.com",
         "github": "https://github.com/",
         "twitter": "exampletwitter@twitter.com",
-        "location": "Arizona"
+        "location": "Phoenix, Arizona"
     },
     "welcomeMessage": "Welcome to my fantabulous site!",
     "skills": ["Chess","Eating","Chipotle","Awesomeness","C#", "Javascript", "SQL", "Jade Templating", "Bootstrap", "Tennis","Running","Darts", "Extremely Strong", "Kung Fu"],
@@ -17,13 +17,13 @@ var work= {
 "jobs":[{
     "employer": "Lin Quai Dojo",
     "title": "Commander",
-    "location": "Phoenix",
+    "location": "Glendale, Arizona",
     "dates": "2014-2015",
     "description": "In charge of day to day Mortal Kombat operations"
 },{
     "employer": "Ajs",
     "title": "bagboy",
-    "location": "Phoenix",
+    "location": "Gilbert, Arizona",
     "dates": "2004-2005",
     "description": "Bagged groceries."
 }]
